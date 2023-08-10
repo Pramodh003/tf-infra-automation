@@ -1,4 +1,5 @@
 name: Terraform automation
+
 on:
   push:
     branches:
