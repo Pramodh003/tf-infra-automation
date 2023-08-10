@@ -8,6 +8,9 @@ on:
 permissions:
   id-token: write
   contents: read
+  
+env:
+  AWS_REGION: 'us-east-1'
 
 jobs:
   terraform:
@@ -23,7 +26,7 @@ jobs:
         with:
             role-to-assume: arn:aws:iam::714249915203:role/github
             role-session-name: Github
-            aws-region: ${{ env.AWS_REGION }}
+            AWS_REGION: ${{ env.AWS_REGION }}
 
       - name: Apply terraform
         run: terraform init && terraform apply --auto-approve
