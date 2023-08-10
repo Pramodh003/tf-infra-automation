@@ -69,7 +69,7 @@ resource "aws_ecs_service" "app-ecs-service" {
   load_balancer {
     target_group_arn = aws_lb_target_group.app-tg
     container_name = "app"
-    port = 80
+    container_port = 80
   }
 }
 
