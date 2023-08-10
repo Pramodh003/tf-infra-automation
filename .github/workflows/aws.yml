@@ -38,7 +38,7 @@ jobs:
 #         working-directory: terraform
         
       - name: Apply terraform
-        run: terraform destoy
+        run: terraform destoy --auto-approve
         working-directory: terraform
       
 
