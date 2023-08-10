@@ -13,8 +13,8 @@ resource "aws_ecs_task_definition" "app-td" {
   container_definitions = <<EOF
   [
     name="app",
-    image=" "{aws_ecr_repository.repo.repository_url}:${var.image_tag}",
-    essential="true,
+    image= "{aws_ecr_repository.repo.repository_url}:${var.image_tag}",
+    essential="true",
     portMappings="[
       {
         containerPort=" 80
