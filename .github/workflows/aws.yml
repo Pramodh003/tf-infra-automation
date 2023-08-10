@@ -58,13 +58,13 @@ jobs:
         run: terraform init
         working-directory: terraform
         
-    #   - name: Apply terraform
-    #     run: terraform apply --auto-approve
-    #     working-directory: terraform
-        
       - name: Apply terraform
-        run: terraform destroy --auto-approve
+        run: terraform apply --auto-approve
         working-directory: terraform
+        
+    #   - name: Apply terraform
+    #     run: terraform destroy --auto-approve
+    #     working-directory: terraform
 
       - name: Export task defnition
         id: export-td
