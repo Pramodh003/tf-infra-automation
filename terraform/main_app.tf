@@ -35,17 +35,17 @@ resource "aws_ecs_task_definition" "app-td" {
 }
 
 resource "aws_iam_role" "ecstaskdefinition" {
-  name = "ecstaskdefinitionrole-tf"
+  name = "ecsTaskdefinitionRole-tf"
   assume_role_policy = data.aws_iam_policy_document.aws_iam_policy_document.json
   
 }
 
 data "aws_iam_policy_document" "aws_iam_policy_document" {
   statement {
-    actions = ["sts.AssumeRole"]
+    actions = ["sts:AssumeRole"]
     principals {
-      type = "Service"
-      identifiers = ["ecs-tasks.amazonaws.com"]
+        type = "Service"
+        identifiers = ["ecs-tasks.amazonaws.com"]
     }
   }
 }
