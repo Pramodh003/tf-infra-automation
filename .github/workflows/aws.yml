@@ -1,4 +1,4 @@
-name: Terraform automation
+name: Terraform automation.
 
 on:
   push:
