@@ -33,12 +33,12 @@ jobs:
         with:
           terraform_version: 1.3.0
           
-      - name: Terraform init
-        run: terraform init
-        working-directory: terraform
+#       - name: Terraform init & terraform apply --auto-approve
+#         run: terraform init
+#         working-directory: terraform
         
       - name: Apply terraform
-        run: terraform apply --auto-approve
+        run: terraform destoy
         working-directory: terraform
       
 
