@@ -58,7 +58,7 @@ resource "aws_ecs_service" "app-ecs-service" {
   name = "app-ecs-service"
   launch_type = "FARGATE"
   desired_count = 1
-  cluster = aws_ecs_cluster.app-ecs
+  cluster = aws_ecs_cluster.app-ecs.id
   task_definition = aws_ecs_task_definition.app-td.arn
 
   network_configuration {
@@ -67,7 +67,7 @@ resource "aws_ecs_service" "app-ecs-service" {
     assign_public_ip = true
   }
   load_balancer {
-    target_group_arn = aws_lb_target_group.app-tg
+    target_group_arn = aws_lb_target_group.app-tg.id
     container_name = "app"
     container_port = 80
   }
