@@ -12,19 +12,19 @@ resource "aws_ecs_task_definition" "app-td" {
   family = "app-td"
   container_definitions = <<EOF
   [
-    "name":"app",
-    "image": "{aws_ecr_repository.repo.repository_url}:${var.image_tag}",
-    "essential":true,
-    "portMappings":[
+    name="app",
+    image=" "{aws_ecr_repository.repo.repository_url}:${var.image_tag}",
+    essential="true,
+    portMappings="[
       {
-        "containerPort": 80
-        "hostPort":80
+        containerPort=" 80
+        hostPort:80
 
 
       }
     ],
-    "memory" : 512,
-    "cpu": 256
+    memory =  512,
+    cpu =  256
   ]
   EOF
   requires_compatibilities = ["FARGATE"]
