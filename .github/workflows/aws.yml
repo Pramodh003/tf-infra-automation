@@ -26,7 +26,7 @@ jobs:
         with:
             role-to-assume: arn:aws:iam::714249915203:role/github
             role-session-name: Github
-            AWS_REGION: ${{ env.AWS_REGION }}
+            aws-region: ${{ env.AWS_REGION }}
 
       - name: Apply terraform
         run: terraform init && terraform apply --auto-approve
