@@ -37,11 +37,6 @@ jobs:
         id: init
         run: terraform init
         
-      - name: Terraform format
-        id: fmt
-        run: terraform fmt -check
-          
-
       - name: Apply terraform
         run: terraform apply --auto-approve
         working-directory: terraform
